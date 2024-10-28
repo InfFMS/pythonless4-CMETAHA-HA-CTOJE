@@ -2,3 +2,12 @@
 # наибольший общий делитель двух натуральных чисел
 # На входе два числа, на выходе их НОД.
 
+a = int(input())
+b = int(input())
+d = 1
+prev_D = 0
+while d <= min(a, b):
+    d += 1
+    if a % d == 0 and b % d == 0:
+        prev_D = d
+print(prev_D)

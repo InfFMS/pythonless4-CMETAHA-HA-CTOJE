@@ -11,4 +11,22 @@
 # перевод из любой системы счисления в десятичную
 # Объедините эти две подзадачи, получите ответ.
 
+import string
+def convert_base(num, from_base, to_base):
+    nums_symbols = list(string.digits) + list(string.ascii_uppercase)
+    num = list(reversed(list(num)))
+    num_in_10 = 0
+    for i in range(len(num)):
+        num_in_10 += nums_symbols.index(num[i]) * (from_base**i)
+
+    num_digits = []
+    while num_in_10 >= 1:
+        num_digits.append(nums_symbols[num_in_10 % to_base])
+        num_in_10 //= to_base
+    num_out = ''.join(list(reversed(num_digits)))
+    return num_out
+
+
+num = input()
+print(convert_base(num, 13, 30))
 
