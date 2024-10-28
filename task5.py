@@ -4,3 +4,14 @@
 # Пользоваться input()[::-1] запрещено!
 # Идея задачи реализовать алгоритм,
 # который будет работать для любого введенного натурального числа.
+
+def reverse_num(num):
+    num = str(num)
+    num_out = []
+    for i in range(len(num)-1, -1, -1):
+        num_out.append(num[i])
+    num_out = ''.join(num_out)
+    return int(num_out)
+
+
+print(reverse_num(int(input())))

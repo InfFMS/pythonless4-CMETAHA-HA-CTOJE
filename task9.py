@@ -4,3 +4,13 @@
 # Операцией возведения в степень пользоваться нельзя!
 # Задача на рекурсию!
 
+def func(N):
+    if N % 2 == 0 and N != 1:
+        N /= 2
+        return func(N)
+    elif N == 1: print('YES')
+    else: print('NO')
+
+N = int(input())
+
+func(N)
